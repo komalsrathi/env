@@ -1,6 +1,6 @@
 .. |date| date::
 
-**abstract**: Paths and environment variables required to run different
+**tldr**: paths and environment variables required to run different
 **Leukgen** pipelines.
 
 ********************
@@ -17,9 +17,8 @@ Leukgen environments
 Description
 -----------
 
-Commonly paths and environment variables required to run different
+Common paths and environment variables required to run different
 **Leukgen** pipelines are stored in ``/ifs/work/leukgen/opt/.env``.
-
 To use a desired environment, add it to your bash profile:
 
 .. code:: bash

@@ -13,12 +13,12 @@ Leukgen environments
 Paths and environment variables required to run different **Leukgen**
 pipelines.
 
-LICENSE: BSD
+**LICENSE**: BSD
 
 Usage
 -----
 
-Add the desired environment to you bash profile, for instance:
+Add the desired environment to your bash profile, for instance:
 
 .. code:: bash
 

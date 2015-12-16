@@ -1,9 +1,36 @@
 #!/bin/bash
 
-# REQUIRED VARIABLES
+# Intro
 # =============================================================================
+: "Export LKNOINTRO=true to your path to avoid welcome message."
+
+if [ "$LKNOINTRO" = true ];
+    then echo "leukgen's cgp environment loaded";
+    else cat ./media/intro;
+fi
+
+# VARIABLES
+# =============================================================================
+
+# CUSTOM
+# ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+: "Variables are avaiable to leukgen users"
+
+export LK=/ifs/work/leukgen
+export LKOPT=/ifs/work/leukgen/opt
+export LKREF=/ifs/work/leukgen/REF
+export LKLIB=/ifs/work/leukgen/lib
+export LKUSERS=/ifs/work/leukgen/users
+export LKWORKFLOWS=/ifs/work/leukgen/workflows
+
+# LOCAL
+# ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+: "Variables used locally to improve readability"
+
 CENTOS6=/opt/common/CentOS_6
-LKOPT=/ifs/work/leukgen/opt
+BBGLIB=cgpBattenberg/cgpBattenberg_v1.3.1/lib/perl5/x86_64-linux-thread-multi
+CVMLIB=cgpCaveman/cgpCaVEManPostProcessing/cgpCaVEManPostProcessing_v1.2.1/lib
+PCAPLIB=pcap/pcap_v1.9.4/lib/perl5/x86_64-linux-thread-multi
 CAVEMANWRAPPER=$LKOPT/cgpCaveman/cgpCaVEManWrapper
 
 # CPG WGS PIPELINES
@@ -19,16 +46,13 @@ export PATH=$PATH:$CAVEMANWRAPPER/cgpCaVEManWrapper_v1.7.3/bin
 
 # TOOLS
 # ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+export PATH=$PATH:$LKOPT/R/R-3.2.3/bin
 export PATH=$PATH:$CENTOS6/bedtools/bedtools-2.22.0/bin
 export PATH=$PATH:$CENTOS6/samtools/samtools-1.2/htslib-1.2.1
-export PATH=$PATH:$CENTOS6/R/R-3.1.2/bin
 export PATH=$PATH:$CENTOS6/perl/perl-5.20.2_THREAD/bin
 
 # PERL5LIB
 # ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-BBGLIB=cgpBattenberg/cgpBattenberg_v1.3.1/lib/perl5/x86_64-linux-thread-multi
-CVMLIB=cgpCaveman/cgpCaVEManPostProcessing/cgpCaVEManPostProcessing_v1.2.1/lib
-PCAPLIB=pcap/pcap_v1.9.4/lib/perl5/x86_64-linux-thread-multi
 export PERL5LIB=$CENTOS6/vagrent/vagrent_v2.1.0/lib/perl5
 export PERL5LIB=$PERL5LIB:$CENTOS6/cgpBattenberg/cgpBattenberg_v1.3.1/lib/perl5
 export PERL5LIB=$PERL5LIB:$CENTOS6/brass/brass_v2.2.0/lib/perl5
@@ -40,7 +64,7 @@ export PERL5LIB=$PERL5LIB:$CENTOS6/pcap/pcap_v1.9.4/lib/perl5/PCAP
 export PERL5LIB=$PERL5LIB:$CENTOS6/pcap/pcap_v1.9.4/lib/perl5
 export PERL5LIB=$PERL5LIB:$CAVEMANWRAPPER/cgpCaVEManWrapper_v1.7.3/lib/perl5
 export PERL5LIB=$PERL5LIB:$CENTOS6/$BBGLIB
-export PERL5LIB=$PERL5LIB:$CENTOS6/$CVLIB/perl5
+export PERL5LIB=$PERL5LIB:$CENTOS6/$CVMLIB/perl5
 export PERL5LIB=$PERL5LIB:$CENTOS6/$PCAPLIB
 
 # LSF

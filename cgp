@@ -6,7 +6,7 @@
 
 if [ "$LKNOINTRO" = true ];
     then echo "leukgen's cgp environment loaded";
-    else cat ./media/intro;
+    else cat /ifs/work/leukgen/opt/.env/media/intro;
 fi
 
 # VARIABLES

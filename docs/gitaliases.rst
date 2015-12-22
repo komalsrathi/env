@@ -12,10 +12,22 @@ Git Aliases
 :organization: Memorial Sloan-Kettering
 :date: |date|
 
+Introduction
+============
+
 These aliases are based on the neat robbyrussell's zsh git plugin.
 For detailed information see the `documentation`_.
 
-Some examples:
+To use them, add this to your bash profile:
+
+.. code:: bash
+
+    if [ -f /ifs/work/leukgen/opt/.env/cgp ]; then
+       . /ifs/work/leukgen/.env/cgp
+    fi
+
+Examples
+========
 
 +--------+-------------------------------------------------+
 | Alias  | Command                                         |

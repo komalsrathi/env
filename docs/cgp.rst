@@ -16,6 +16,17 @@ leukgen CGP environment
    :keywords: environments, CGP, leukgen, path
    :description lang=en: CGP environment documentation.
 
+Introduction
+============
+
+Add to your bash profile:
+
+.. code:: bash
+
+    if [ -f /ifs/work/leukgen/opt/.env/cgp ]; then
+       . /ifs/work/leukgen/.env/cgp
+    fi
+
 Variables
 =========
 

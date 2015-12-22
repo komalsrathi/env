@@ -1,4 +1,4 @@
-.. |datedate::
+.. |date| date::
 
 **tldr**: These aliases are based on the neat robbyrussell's zsh git plugin.
 For detailed information see `documentation`_

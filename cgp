@@ -6,7 +6,7 @@
 
 if [ "$LKNOINTRO" = true ];
     then echo "leukgen's cgp environment loaded";
-    else cat /ifs/work/leukgen/opt/.env/media/intro;
+    else cat /ifs/work/leukgen/.env/media/intro;
 fi
 
 # VARIABLES
@@ -14,10 +14,11 @@ fi
 
 # CUSTOM
 # ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-: "Variables are avaiable to leukgen users"
+: "Variables avaiable to leukgen users"
 
 export LK=/ifs/work/leukgen
 export LKOPT=/ifs/work/leukgen/opt
+export LKBIN=/ifs/work/leukgen/bin
 export LKREF=/ifs/work/leukgen/REF
 export LKLIB=/ifs/work/leukgen/lib
 export LKUSERS=/ifs/work/leukgen/users
@@ -27,49 +28,90 @@ export LKWORKFLOWS=/ifs/work/leukgen/workflows
 # ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 : "Variables used locally to improve readability"
 
-CENTOS6=/opt/common/CentOS_6
-BBGLIB=cgpBattenberg/cgpBattenberg_v1.3.1/lib/perl5/x86_64-linux-thread-multi
-CVMLIB=cgpCaveman/cgpCaVEManPostProcessing/cgpCaVEManPostProcessing_v1.2.1/lib
-PCAPLIB=pcap/pcap_v1.9.4/lib/perl5/x86_64-linux-thread-multi
-CAVEMANWRAPPER=$LKOPT/cgpCaveman/cgpCaVEManWrapper
+# CENTOS6=/opt/common/CentOS_6
+# BBGLIB=cgpBattenberg/cgpBattenberg_v1.3.1/lib/perl5/x86_64-linux-thread-multi
+# CVMLIB=cgpCaveman/cgpCaVEManPostProcessing/cgpCaVEManPostProcessing_v1.2.1/lib
+# PCAPLIB=pcap/pcap_v1.9.4/lib/perl5/x86_64-linux-thread-multi
+# CAVEMANWRAPPER=$LKOPT/cgpCaveman/cgpCaVEManWrapper
 
-# CPG WGS PIPELINES
+# SOFTWARE
 # ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-export PATH=$PATH:$CENTOS6/impute2/impute_v2.3.2
-export PATH=$PATH:$CENTOS6/brass/brass_v2.2.0/bin
-export PATH=$PATH:$CENTOS6/cgpBattenberg/cgpBattenberg_v1.3.1/bin
-export PATH=$PATH:$CENTOS6/vagrent/vagrent_v2.1.0/bin
-export PATH=$PATH:$CENTOS6/cgpVcf/bin
-export PATH=$PATH:$CENTOS6/alleleCount/alleleCount_v2.1.0/bin
-export PATH=$PATH:$CENTOS6/pcap/pcap_v1.9.4/bin
-export PATH=$PATH:$CAVEMANWRAPPER/cgpCaVEManWrapper_v1.7.3/bin
+export PATH=$LKBIN/R/3.2.3/bin:$PATH                        # R
+export PATH=$LKBIN/perl/5.22.1/bin:$PATH                    # perl
+export PATH=$LKBIN/curl/7.46.0/bin:$PATH                    # curl
 
-# TOOLS
+export PERLBREW_ROOT=$LKBIN/perlbrew/0.74		    # perlbrew
+export PERLBREW_HOME=$LKBIN/perlbrew/0.74/.perlbrew         # perlbrew
+export PATH=$LKBIN/perlbrew/0.74/bin:$PATH		    # perlbrew
+source /ifs/work/leukgen/bin/perlbrew/0.74/etc/bashrc       # perlbrew initialization
+
+# GNU autotools
+# export PATH=$LKBIN/autoconf/2.69/bin:$PATH
+# export PATH=$LKBIN/automake/1.15/bin:$PATH
+# export PATH=$LKBIN/libtool/2.4.6/bin:$PATH
+# export PATH=$LKBIN/pkg-config/0.28/bin:$PATH
+
+# PCAP and its dependencies
 # ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-export PATH=$PATH:$LKOPT/R/R-3.2.3/bin
-export PATH=$PATH:$CENTOS6/bedtools/bedtools-2.22.0/bin
-export PATH=$PATH:$CENTOS6/samtools/samtools-1.2/htslib-1.2.1
-export PATH=$PATH:$CENTOS6/perl/perl-5.20.2_THREAD/bin
+
+export PATH=$LKOPT/PCAP-core/1.10.0/bin:$PATH               # PCAP-core
+export PATH=$LKOPT/bwa/0.7.12/bin:$PATH                     # bwa
+export PATH=$LKOPT/kentutils/302.1/bin:$PATH                # kentutils
+export PATH=$LKOPT/samtools/1.3/bin:$PATH                   # samtools
+export PATH=$LKOPT/bcftools/1.3/bin:$PATH                   # bcftools
+export PATH=$LKOPT/htslib/1.3/bin:$PATH                     # htslib
+export PATH=$LKLIB/libmaus/0.0.196/lib:$PATH                # libmaus
+export PATH=$LKOPT/biobambam/0.0.191/bin:$PATH              # biobambam
+export PATH=$LKOPT/alleleCount/2.1.2/bin:$PATH              # alleleCount
+export PATH=$LKOPT/vcftools/0.1.14/bin:$PATH                # vcftools
+
+# export PATH=$PATH:$CENTOS6/bedtools/bedtools-2.22.0/bin
+# export PATH=$PATH:$CENTOS6/samtools/samtools-1.2/htslib-1.2.1
+# export PATH=$PATH:$CENTOS6/perl/perl-5.20.2_THREAD/bin
 
 # PERL5LIB
 # ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-export PERL5LIB=$CENTOS6/vagrent/vagrent_v2.1.0/lib/perl5
-export PERL5LIB=$PERL5LIB:$CENTOS6/cgpBattenberg/cgpBattenberg_v1.3.1/lib/perl5
-export PERL5LIB=$PERL5LIB:$CENTOS6/brass/brass_v2.2.0/lib/perl5
-export PERL5LIB=$PERL5LIB:$CENTOS6/ascatNgs/ascatNgs_v1.5.1/lib/perl5
-export PERL5LIB=$PERL5LIB:$CENTOS6/alleleCount/alleleCount_v2.1.0/lib/perl5
-export PERL5LIB=$PERL5LIB:$CENTOS6/cgpPindel/cgpPindel_v1.3.2/lib/perl5
-export PERL5LIB=$PERL5LIB:$CENTOS6/cgpVcf/lib/perl5
-export PERL5LIB=$PERL5LIB:$CENTOS6/pcap/pcap_v1.9.4/lib/perl5/PCAP
-export PERL5LIB=$PERL5LIB:$CENTOS6/pcap/pcap_v1.9.4/lib/perl5
-export PERL5LIB=$PERL5LIB:$CAVEMANWRAPPER/cgpCaVEManWrapper_v1.7.3/lib/perl5
-export PERL5LIB=$PERL5LIB:$CENTOS6/$BBGLIB
-export PERL5LIB=$PERL5LIB:$CENTOS6/$CVMLIB/perl5
-export PERL5LIB=$PERL5LIB:$CENTOS6/$PCAPLIB
+# default perl library
+# export PERL5LIB=$LKBIN/perl/5.22.1/lib:$PERL5LIB
+# export PERL5LIB=$LKLIB/perl5/5.22.1/lib/site_perl/5.22.1:$PERL5LIB
+export PERL5LIB=$LKLIB/perl5/5.22.1:$PERL5LIB
+
+# CGP-specific perl libaries
+export PERL5LIB=$LKOPT/PCAP-core/1.10.0/lib/perl5:$PERL5LIB
+export PERL5LIB=$LKOPT/alleleCount/2.1.2/lib/perl5:$PERL5LIB
+
+# export PERL5LIB=$CENTOS6/vagrent/vagrent_v2.1.0/lib/perl5
+# export PERL5LIB=$PERL5LIB:$CENTOS6/cgpBattenberg/cgpBattenberg_v1.3.1/lib/perl5
+# export PERL5LIB=$PERL5LIB:$CENTOS6/brass/brass_v2.2.0/lib/perl5
+# export PERL5LIB=$PERL5LIB:$CENTOS6/ascatNgs/ascatNgs_v1.5.1/lib/perl5
+# export PERL5LIB=$PERL5LIB:$CENTOS6/alleleCount/alleleCount_v2.1.0/lib/perl5
+# export PERL5LIB=$PERL5LIB:$CENTOS6/cgpPindel/cgpPindel_v1.3.2/lib/perl5
+# export PERL5LIB=$PERL5LIB:$CENTOS6/cgpVcf/lib/perl5
+# export PERL5LIB=$PERL5LIB:$CENTOS6/pcap/pcap_v1.9.4/lib/perl5/PCAP
+# export PERL5LIB=$PERL5LIB:$CENTOS6/pcap/pcap_v1.9.4/lib/perl5
+# export PERL5LIB=$PERL5LIB:$CAVEMANWRAPPER/cgpCaVEManWrapper_v1.7.3/lib/perl5
+# export PERL5LIB=$PERL5LIB:$CENTOS6/$BBGLIB
+# export PERL5LIB=$PERL5LIB:$CENTOS6/$CVMLIB/perl5
+# export PERL5LIB=$PERL5LIB:$CENTOS6/$PCAPLIB
+
+
+# CGP WGS PIPELINES
+# ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+# export PATH=$PATH:$CENTOS6/impute2/impute_v2.3.2
+# export PATH=$PATH:$CENTOS6/brass/brass_v2.2.0/bin
+# export PATH=$PATH:$CENTOS6/cgpBattenberg/cgpBattenberg_v1.3.1/bin
+# export PATH=$PATH:$CENTOS6/vagrent/vagrent_v2.1.0/binls
+# export PATH=$PATH:$CENTOS6/cgpVcf/bin
+# export PATH=$PATH:$CENTOS6/alleleCount/alleleCount_v2.1.0/bin
+# export PATH=$PATH:$CENTOS6/pcap/pcap_v1.9.4/bin
+# export PATH=$PATH:$CAVEMANWRAPPER/cgpCaVEManWrapper_v1.7.3/bin
 
 # LSF
 # ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-export PATH=$PATH:/common/lsf/9.1/linux2.6-glibc2.3-x86_64/etc
-export PATH=$PATH:/common/lsf/9.1/linux2.6-glibc2.3-x86_64/bin
-export LD_LIBRARY_PATH=/opt/boost_1_47_0/stage/lib/:$LD_LIBRARY_PATH
+# export PATH=$PATH:/common/lsf/9.1/linux2.6-glibc2.3-x86_64/etc
+# export PATH=$PATH:/common/lsf/9.1/linux2.6-glibc2.3-x86_64/bin
+# export LD_LIBRARY_PATH=/opt/boost_1_47_0/stage/lib/:$LD_LIBRARY_PATH
+
+
+# required for luna sessions
 export PS1='\h:\W \u\$ '

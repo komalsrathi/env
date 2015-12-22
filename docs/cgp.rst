@@ -1,6 +1,6 @@
 .. |date| date::
 
-**tldr**: environment required to run the cgp pipelines.
+**tldr**: **cgp** environment documentation.
 
 ***********************
 leukgen cgp environment
@@ -12,6 +12,9 @@ leukgen cgp environment
 :status: This is "work in progress"
 :date: |date|
 
+.. meta::
+   :keywords: environments, cgp, leukgen, path
+   :description lang=en: cgp environment documentation.
 
 Variables
 =========

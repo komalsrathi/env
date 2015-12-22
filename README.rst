@@ -36,11 +36,11 @@ To use a desired environment, add it to your bash profile:
 Environments
 ============
 
-* :doc:`/docs/cgp`
+* :doc:`cgp`
 
 Aliases
 =======
 
-* :doc:`/docs/gitaliases`
+* :doc:`gitaliases`
 
 

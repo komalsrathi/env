@@ -4,10 +4,10 @@ Welcome to Leukgen's enviroments documentation!
 Contents:
 
 .. toctree::
-    :maxdepth: 3
+    :maxdepth: 1
 
     Quick Start <quickstart>
-    **cgp** Environment <cgp>
+    cgp Environment <cgp>
     Git Aliases <gitaliases>
 
 .. note::

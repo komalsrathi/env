@@ -74,11 +74,13 @@ export PATH=$LKOPT/vcftools/0.1.14/bin:$PATH                # vcftools
 # default perl library
 # export PERL5LIB=$LKBIN/perl/5.22.1/lib:$PERL5LIB
 # export PERL5LIB=$LKLIB/perl5/5.22.1/lib/site_perl/5.22.1:$PERL5LIB
-export PERL5LIB=$LKLIB/perl5/5.22.1:$PERL5LIB
+export PERL5LIB=$LKLIB/perl5/5.22.1:$PERL5LIB						# perl
 
 # CGP-specific perl libaries
-export PERL5LIB=$LKOPT/PCAP-core/1.10.0/lib/perl5:$PERL5LIB
-export PERL5LIB=$LKOPT/alleleCount/2.1.2/lib/perl5:$PERL5LIB
+export PERL5LIB=$LKOPT/PCAP-core/1.10.0/lib/perl5:$PERL5LIB				# PCAP-core
+export PERL5LIB=$LKOPT/PCAP-core/1.10.0/lib/perl5/x86_64-linux-thread-multi:$PERL5LIB	# PCAP-core
+export PERL5LIB=$LKOPT/PCAP-core/1.10.0/lib/PCAP:$PERL5LIB				# PCAP-core
+export PERL5LIB=$LKOPT/alleleCount/2.1.2/lib/perl5:$PERL5LIB				# alleleCount
 
 # export PERL5LIB=$CENTOS6/vagrent/vagrent_v2.1.0/lib/perl5
 # export PERL5LIB=$PERL5LIB:$CENTOS6/cgpBattenberg/cgpBattenberg_v1.3.1/lib/perl5

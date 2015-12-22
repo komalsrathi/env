@@ -1,9 +1,9 @@
 .. |date| date::
 
-**tldr**: **cgp** environment documentation.
+**tldr**: **CGP** environment documentation.
 
 ***********************
-leukgen cgp environment
+leukgen CGP environment
 ***********************
 
 :authors: Gunes Gundem, Komal Rathi, Juan Medina
@@ -13,8 +13,8 @@ leukgen cgp environment
 :date: |date|
 
 .. meta::
-   :keywords: environments, cgp, leukgen, path
-   :description lang=en: cgp environment documentation.
+   :keywords: environments, CGP, leukgen, path
+   :description lang=en: CGP environment documentation.
 
 Variables
 =========

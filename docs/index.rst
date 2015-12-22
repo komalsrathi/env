@@ -7,7 +7,7 @@ Contents:
     :maxdepth: 1
 
     Quick Start <quickstart>
-    cgp Environment <cgp>
+    CGP Environment <cgp>
     Git Aliases <gitaliases>
 
 .. note::

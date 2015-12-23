@@ -23,6 +23,7 @@ export LKREF=/ifs/work/leukgen/REF
 export LKLIB=/ifs/work/leukgen/lib
 export LKUSERS=/ifs/work/leukgen/users
 export LKWORKFLOWS=/ifs/work/leukgen/workflows
+# export SAMTOOLS=$LKOPT/samtools/0.1.19
 
 # LOCAL
 # ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -37,12 +38,16 @@ export LKWORKFLOWS=/ifs/work/leukgen/workflows
 # SOFTWARE
 # ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 export PATH=$LKBIN/R/3.2.3/bin:$PATH                        # R
-export PATH=$LKBIN/perl/5.22.1/bin:$PATH                    # perl
+# export PATH=$LKBIN/perl/5.22.1/bin:$PATH                    # perl
 export PATH=$LKBIN/curl/7.46.0/bin:$PATH                    # curl
+#export PATH=$LKBIN/asciidoc/8.6.9/bin:$PATH                 # asciidoc
+#export PATH=$LKBIN/xmlto/0.0.28/bin:$PATH                   # xmlto
+#export PATH=$LKBIN/docbook2X/0.8.8/bin:$PATH                # docbook2X
+export PATH=$LKBIN/git/2.6.4/bin:$PATH                     # git
 
-export PERLBREW_ROOT=$LKBIN/perlbrew/0.74		    # perlbrew
+export PERLBREW_ROOT=$LKBIN/perlbrew/0.74                   # perlbrew
 export PERLBREW_HOME=$LKBIN/perlbrew/0.74/.perlbrew         # perlbrew
-export PATH=$LKBIN/perlbrew/0.74/bin:$PATH		    # perlbrew
+export PATH=$LKBIN/perlbrew/0.74/bin:$PATH                  # perlbrew
 source /ifs/work/leukgen/bin/perlbrew/0.74/etc/bashrc       # perlbrew initialization
 
 # GNU autotools
@@ -54,16 +59,18 @@ source /ifs/work/leukgen/bin/perlbrew/0.74/etc/bashrc       # perlbrew initializ
 # PCAP and its dependencies
 # ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-export PATH=$LKOPT/PCAP-core/1.10.0/bin:$PATH               # PCAP-core
-export PATH=$LKOPT/bwa/0.7.12/bin:$PATH                     # bwa
-export PATH=$LKOPT/kentutils/302.1/bin:$PATH                # kentutils
-export PATH=$LKOPT/samtools/1.3/bin:$PATH                   # samtools
-export PATH=$LKOPT/bcftools/1.3/bin:$PATH                   # bcftools
-export PATH=$LKOPT/htslib/1.3/bin:$PATH                     # htslib
-export PATH=$LKLIB/libmaus/0.0.196/lib:$PATH                # libmaus
-export PATH=$LKOPT/biobambam/0.0.191/bin:$PATH              # biobambam
-export PATH=$LKOPT/alleleCount/2.1.2/bin:$PATH              # alleleCount
-export PATH=$LKOPT/vcftools/0.1.14/bin:$PATH                # vcftools
+
+# export PATH=$LKOPT/PCAP-core/1.10.0/bin:$PATH               # PCAP-core
+# export PATH=$LKOPT/bwa/0.7.12:$PATH                         # bwa
+# export PATH=$LKOPT/kentutils/302.1/bin:$PATH                # kentutils
+#export PATH=$LKOPT/samtools/1.3/bin:$PATH                  # samtools
+#export PATH=$LKOPT/bcftools/1.3/bin:$PATH                   # bcftools
+#export PATH=$LKOPT/htslib/1.3/bin:$PATH                     # htslib
+# export PATH=$LKLIB/libmaus/0.0.196/lib:$PATH                # libmaus
+# export PATH=$LKOPT/biobambam/0.0.191/bin:$PATH              # biobambam
+# export PATH=$LKOPT/alleleCount/2.1.2/bin:$PATH              # alleleCount
+# export PATH=$LKOPT/vcftools/0.1.14/bin:$PATH                # vcftools
+# export PATH=$LKOPT/samtools/0.1.19:$PATH                   # samtools
 
 # export PATH=$PATH:$CENTOS6/bedtools/bedtools-2.22.0/bin
 # export PATH=$PATH:$CENTOS6/samtools/samtools-1.2/htslib-1.2.1
@@ -72,15 +79,15 @@ export PATH=$LKOPT/vcftools/0.1.14/bin:$PATH                # vcftools
 # PERL5LIB
 # ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 # default perl library
-export PERL5LIB=$LKBIN/perl/5.22.1/lib:$PERL5LIB
+# export PERL5LIB=$LKBIN/perl/5.22.1/lib:$PERL5LIB            # perl
 # export PERL5LIB=$LKLIB/perl5/5.22.1/lib/site_perl/5.22.1:$PERL5LIB
-# export PERL5LIB=$LKLIB/perl5/5.22.1:$PERL5LIB						# perl
+# export PERL5LIB=$LKLIB/perl5/5.22.1:$PERL5LIB
 
 # CGP-specific perl libaries
-export PERL5LIB=$LKOPT/PCAP-core/1.10.0/lib/perl5:$PERL5LIB				# PCAP-core
-export PERL5LIB=$LKOPT/PCAP-core/1.10.0/lib/perl5/x86_64-linux-thread-multi:$PERL5LIB	# PCAP-core
-export PERL5LIB=$LKOPT/PCAP-core/1.10.0/lib/PCAP:$PERL5LIB				# PCAP-core
-export PERL5LIB=$LKOPT/alleleCount/2.1.2/lib/perl5:$PERL5LIB				# alleleCount
+# export PERL5LIB=$LKOPT/PCAP-core/1.10.0/lib/perl5:$PERL5LIB                              # PCAP-core
+# export PERL5LIB=$LKOPT/PCAP-core/1.10.0/lib/perl5/x86_64-linux-thread-multi:$PERL5LIB    # PCAP-core
+# export PERL5LIB=$LKOPT/PCAP-core/1.10.0/lib/PCAP:$PERL5LIB                               # PCAP-core
+# export PERL5LIB=$LKOPT/alleleCount/2.1.2/lib/perl5:$PERL5LIB                             # alleleCount
 
 # export PERL5LIB=$CENTOS6/vagrent/vagrent_v2.1.0/lib/perl5
 # export PERL5LIB=$PERL5LIB:$CENTOS6/cgpBattenberg/cgpBattenberg_v1.3.1/lib/perl5
